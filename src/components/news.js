@@ -4,17 +4,17 @@ const News = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    const apiKey = "701c34ddf4514fd68572239183716cad";
+    const apiKey = "vzHZl1RrPOpJU4e1XsnbwUxLhxbL5Z";
     const fetchData = async () => {
-      const apiUrl = `https://newsapi.org/v2/everything?q=tesla&sortBy=publishedAt&apiKey=${apiKey}`;
+      const apiUrl = `https://newsapi.in/newsapi/news.php?key=${apiKey}&category=afrikaans`;
 
       const response = await fetch(apiUrl);
       if (!response.ok) {
         console.log(`Failed to fetch data: ${response.statusText}`);
       }
       const parsedData = await response.json();
-      setArticles(parsedData.articles);
-      console.log(parsedData.articles);
+      setArticles(parsedData.News);
+      console.log(parsedData.News);
     };
 
     fetchData();
